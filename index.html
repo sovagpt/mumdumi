@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MUMDUMI - Own Onli Mumdumi No Be Happy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: white;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .header .tagline {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(to bottom, 
+                #B22234 0%, #B22234 7.69%,
+                white 7.69%, white 15.38%,
+                #B22234 15.38%, #B22234 23.07%,
+                white 23.07%, white 30.76%,
+                #B22234 30.76%, #B22234 38.45%,
+                white 38.45%, white 46.14%,
+                #B22234 46.14%, #B22234 53.83%,
+                white 53.83%, white 61.52%,
+                #B22234 61.52%, #B22234 69.21%,
+                white 69.21%, white 76.9%,
+                #B22234 76.9%, #B22234 84.59%,
+                white 84.59%, white 92.28%,
+                #B22234 92.28%, #B22234 100%
+            );
+            min-height: 500px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 46.14%;
+            background: #3C3B6E;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 46.14%;
+            background-image: 
+                radial-gradient(circle, white 25%, transparent 25%);
+            background-size: 6.66% 11.11%;
+            background-position: 3.33% 5.55%;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .hero-image {
+            max-width: 400px;
+            width: 90%;
+            height: auto;
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3));
+        }
+
+        .ca-address {
+            background: #3C3B6E;
+            color: white;
+            padding: 15px;
+            margin: 30px auto;
+            max-width: 90%;
+            border-radius: 25px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .copy-btn {
+            background: white;
+            color: #3C3B6E;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        .ticker-tape {
+            background: #f0f0f0;
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+
+        .ticker-content span {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 40px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-text {
+            font-size: 11px;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .disclaimer {
+            font-size: 9px;
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .how-to-buy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .buy-step {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+
+        .buy-step h3 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #3C3B6E;
+        }
+
+        .buy-step h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .buy-step p {
+            font-size: 11px;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .buy-btn {
+            background: #3C3B6E;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin-top: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .buy-btn.secondary {
+            background: #B22234;
+        }
+
+        .modal-box {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #3C3B6E;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .modal-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .modal-box p {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .modal-box .checkmark {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+
+        .flag-divider {
+            height: 40px;
+            background: linear-gradient(to right, 
+                transparent 0%, transparent 2%,
+                #B22234 2%, #B22234 4%,
+                white 4%, white 6%,
+                #3C3B6E 6%, #3C3B6E 8%,
+                transparent 8%, transparent 10%,
+                #B22234 10%, #B22234 12%,
+                white 12%, white 14%,
+                #3C3B6E 14%, #3C3B6E 16%,
+                transparent 16%, transparent 18%,
+                #B22234 18%, #B22234 20%,
+                white 20%, white 22%,
+                #3C3B6E 22%, #3C3B6E 24%,
+                transparent 24%, transparent 26%,
+                #B22234 26%, #B22234 28%,
+                white 28%, white 30%,
+                #3C3B6E 30%, #3C3B6E 32%,
+                transparent 32%, transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: wave 3s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .tokenomics {
+            background: #f9f9f9;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .token-item {
+            text-align: center;
+        }
+
+        .token-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .token-item h4 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .donate {
+            text-align: center;
+        }
+
+        .donate-image {
+            width: 100px;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .donate p {
+            font-size: 12px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 20px auto;
+            text-transform: uppercase;
+        }
+
+        .donate-btn {
+            background: #3C3B6E;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .community {
+            background: #f9f9f9;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .community-item {
+            text-align: center;
+        }
+
+        .community-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .telegram-btn {
+            background: #3C3B6E;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .memes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .meme-item {
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .meme-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer {
+            background: #3C3B6E;
+            color: white;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 10px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-ticker {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .footer-character {
+            position: absolute;
+            right: 50px;
+            bottom: 0;
+            width: 300px;
+            height: auto;
+            z-index: 1;
+        }
+
+        .side-hand {
+            position: fixed;
+            left: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: auto;
+            z-index: 999;
+            transition: left 0.5s ease-out;
+            pointer-events: none;
+        }
+
+        .side-hand.show {
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                min-height: 300px;
+            }
+
+            .hero-image {
+                max-width: 250px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .how-to-buy {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-box {
+                right: 10px;
+                bottom: 10px;
+                max-width: 250px;
+                padding: 20px;
+            }
+
+            .footer-character {
+                width: 200px;
+                right: 20px;
+            }
+
+            .memes-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>$MUMDUMI</h1>
+        <p class="tagline">Own Onli Mumdumi No Be Happy</p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Zuhren Mumdumi" class="hero-image">
+        </div>
+    </div>
+
+    <!-- CA Address -->
+    <div class="ca-address">
+        <span id="caAddress">CA: PASTE_YOUR_CONTRACT_ADDRESS_HERE</span>
+        <button class="copy-btn" onclick="copyCA()">COPY</button>
+    </div>
+
+    <!-- Ticker Tape -->
+    <div class="ticker-tape">
+        <div class="ticker-content">
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section">
+        <h2>ABOUT</h2>
+        <p class="about-text">
+            In 2025, the United States had only one president during the first weeks of spring. The undeposable Zuhren is not only the best politician, he is also the best memecoin. He does the best interviews, makes the best memes, and has the best rallies. Mumdumi always comes through for his supporters—just like this memecoin. $MUMDUMI is for the believers, the patriots, and the people who know greatness when they see it.
+        </p>
+        <p class="disclaimer">$Mumdumi is a memecoin with no intrinsic value or expectation of financial return. This token is for entertainment purposes only.</p>
+    </div>
+
+    <!-- How to Buy Section -->
+    <div class="section">
+        <h2>HOW TO BUY</h2>
+        <div class="how-to-buy">
+            <div class="buy-step">
+                <h3>1</h3>
+                <h4>Create a Wallet</h4>
+                <p>Download Phantom or your wallet of choice from the App Store or Google Play Store for free. Desktop users, download the Google Chrome extension by going to Phantom.app.</p>
+                <button class="buy-btn">MAKE WALLET</button>
+                <button class="buy-btn secondary">BUY WALLET</button>
+            </div>
+            <div class="buy-step">
+                <h3>2</h3>
+                <h4>Get Some $SOL</h4>
+                <p>Have SOL in your wallet to switch to $MUMDUMI. If you don't have any SOL, you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+                <button class="buy-btn">GET $SOL</button>
+            </div>
+            <div class="buy-step">
+                <h3>3</h3>
+                <h4>Go to OKX DEX</h4>
+                <p>Connect to OKX DEX. Go to app.okx.com in Google Chrome or on the browser inside your Phantom app. Connect your wallet. Paste the $MUMDUMI token address into OKX DEX, select MUMDUMI, and confirm. When Phantom prompts you for a wallet signature, sign.</p>
+                <button class="buy-btn">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Box -->
+    <div class="modal-box">
+        <span class="checkmark">✓</span>
+        <h3>$MUMDUMI</h3>
+        <p>Instructions on how to buy $MUMDUMI on OKX DEX using a desktop or mobile device.</p>
+    </div>
+
+    <!-- Flag Divider -->
+    <div class="flag-divider"></div>
+
+    <!-- Tokenomics Section -->
+    <div class="section tokenomics">
+        <h2>TOKENIMICS</h2>
+        <div class="tokenomics-grid">
+            <div class="token-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba5773262a941a46be_burnt.png" alt="LP Burnt">
+                <h4>LP BURNT</h4>
+            </div>
+            <div class="token-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bab7cb54091e312996_mint%20revoked.png" alt="Mint Revoked">
+                <h4>MINT REVOKED</h4>
+            </div>
+            <div class="token-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bbdd8e8d5304ab81cc_0tax.png" alt="0% Tax">
+                <h4>0% TAX</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donate Section -->
+    <div class="section donate">
+        <h2>DONATE</h2>
+        <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Mumdumi" class="donate-image">
+        <p>Your donations directly support the growth and success of $MUMDUMI. Every contribution helps us spread the message, build the community, and make memecoins great again. Just like Zuhren Mumdumi, we believe in the power of the people.</p>
+        <button class="donate-btn">DONATE</button>
+    </div>
+
+    <!-- Community Section -->
+    <div class="section community">
+        <h2>COMMUNITY</h2>
+        <div class="community-grid">
+            <div class="community-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba295a02fb454851b5_crowd.png" alt="Crowd">
+            </div>
+            <div class="community-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918baa524e1950cb98cfd_kult.png" alt="Join the Kult">
+                <button class="telegram-btn">
+                    <span>▶</span> TELEGRAM
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memes Section -->
+    <div class="section">
+        <h2>MEMES</h2>
+        <div class="memes-grid">
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 1">
+            </div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba9f4af6d65101b083_4mayor.png" alt="Meme 2">
+            </div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918baa524e1950cb98cfd_kult.png" alt="Meme 3">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 5">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba295a02fb454851b5_crowd.png" alt="Meme 8">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 11">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba9f4af6d65101b083_4mayor.png" alt="Meme 15">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <h2>$MUMDUMI</h2>
+            <p>Copyright© Zuhren Mumdumi</p>
+            <p>MUMDUMI IS A MEMECOIN CREATED FOR SATIRE AND SOCIAL COMMENTARY. $MUMDUMI IS A MEMECOIN WITH NO INTRINSIC VALUE OR EXPECTATION OF FINANCIAL RETURN.</p>
+            <p>This token is for entertainment purposes only and is not an investment. We are not responsible or liable for any financial loss.</p>
+            <div class="footer-ticker">
+                $MUMDUMI $MUMDUMI $MUMDUMI
+            </div>
+        </div>
+        <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba295a02fb454851b5_underwear.png" alt="Mumdumi Character" class="footer-character">
+    </div>
+
+    <!-- Side Hand -->
+    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba8d50ff1eaa9f4885_popsout.png" alt="Hand" class="side-hand" id="sideHand">
+
+    <script>
+        // Copy CA Address
+        function copyCA() {
+            const caText = document.getElementById('caAddress').textContent.replace('CA: ', '');
+            navigator.clipboard.writeText(caText).then(() => {
+                alert('Contract Address copied to clipboard!');
+            });
+        }
+
+        // Side Hand Animation on Scroll
+        let handShown = false;
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const sideHand = document.getElementById('sideHand');
+            
+            // Show hand after scrolling past 1.5 screen heights
+            if (scrollPosition > windowHeight * 1.5 && !handShown) {
+                sideHand.classList.add('show');
+                handShown = true;
+                
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    sideHand.classList.remove('show');
+                }, 3000);
+            }
+        });
+
+        // Duplicate ticker content for infinite scroll
+        const tickerContent = document.querySelector('.ticker-content');
+        tickerContent.innerHTML = tickerContent.innerHTML + tickerContent.innerHTML;
+    </script>
+</body>
+</html>
