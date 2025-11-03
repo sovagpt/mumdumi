@@ -100,12 +100,10 @@
         }
 
         .ticker-tape {
-            background: #f0f0f0;
-            padding: 15px 0;
+            background: transparent;
+            padding: 30px 0;
             overflow: hidden;
             white-space: nowrap;
-            border-top: 2px solid #000;
-            border-bottom: 2px solid #000;
         }
 
         .ticker-content {
@@ -114,9 +112,9 @@
         }
 
         .ticker-content span {
-            font-size: 24px;
+            font-size: 48px;
             font-weight: bold;
-            margin: 0 40px;
+            margin: 0 60px;
         }
 
         @keyframes scroll {
@@ -261,33 +259,29 @@
         }
 
         .flag-divider {
-            height: 40px;
-            background: linear-gradient(to right, 
-                transparent 0%, transparent 2%,
-                #B22234 2%, #B22234 4%,
-                white 4%, white 6%,
-                #3C3B6E 6%, #3C3B6E 8%,
-                transparent 8%, transparent 10%,
-                #B22234 10%, #B22234 12%,
-                white 12%, white 14%,
-                #3C3B6E 14%, #3C3B6E 16%,
-                transparent 16%, transparent 18%,
-                #B22234 18%, #B22234 20%,
-                white 20%, white 22%,
-                #3C3B6E 22%, #3C3B6E 24%,
-                transparent 24%, transparent 26%,
-                #B22234 26%, #B22234 28%,
-                white 28%, white 30%,
-                #3C3B6E 30%, #3C3B6E 32%,
-                transparent 32%, transparent 100%
-            );
-            background-size: 200% 100%;
-            animation: wave 3s linear infinite;
+            height: 100px;
+            background: white;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
-        @keyframes wave {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 200% 0%; }
+        .flag-divider-content {
+            display: flex;
+            animation: slideFlags 20s linear infinite;
+            gap: 20px;
+        }
+
+        .flag-divider-content img {
+            height: 100px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideFlags {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .tokenomics {
@@ -677,8 +671,8 @@
             </div>
             <div class="buy-step">
                 <h3>3</h3>
-                <h4>GO TO OKX DEX</h4>
-                <p>konect to OKX DEX. go to app.okx.com in googul chrome or on da browzer inside ur fantom app. konect ur wallet. paste da $MUMDUMI token address into OKX DEX, selekt MUMDUMI, and konfirm. wen fantom prompts u for a wallet signature, sign.</p>
+                <h4>GO TO PUMP.FUN</h4>
+                <p>konect to pump.fun. go to pump.fun in googul chrome or on da browzer inside ur fantom app. konect ur wallet. paste da $MUMDUMI token address into pump.fun, selekt MUMDUMI, and konfirm. wen fantom prompts u for a wallet signature, sign.</p>
                 <button class="buy-btn">BUY NOW</button>
             </div>
         </div>
@@ -688,7 +682,7 @@
     <div class="modal-box">
         <span class="checkmark">✓</span>
         <h3>$MUMDUMI</h3>
-        <p>instrukshuns on how to buy $MUMDUMI on OKX DEX uzing a desktop or mobil devize.</p>
+        <p>instrukshuns on how to buy $MUMDUMI on pump.fun uzing a desktop or mobil devize.</p>
         <div class="social-buttons">
             <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community">
             <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI">
@@ -696,7 +690,18 @@
     </div>
 
     <!-- Flag Divider -->
-    <div class="flag-divider"></div>
+    <div class="flag-divider">
+        <div class="flag-divider-content" id="flagContent">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+        </div>
+    </div>
 
     <!-- Tokenomics Section -->
     <div class="section tokenomics">
@@ -839,6 +844,10 @@
         // Duplicate ticker content for infinite scroll
         const tickerContent = document.querySelector('.ticker-content');
         tickerContent.innerHTML = tickerContent.innerHTML + tickerContent.innerHTML;
+
+        // Duplicate flag content for infinite scroll
+        const flagContent = document.getElementById('flagContent');
+        flagContent.innerHTML = flagContent.innerHTML + flagContent.innerHTML;
     </script>
 </body>
 </html>
