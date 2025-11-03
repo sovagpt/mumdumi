@@ -214,7 +214,7 @@
             color: white;
             padding: 30px;
             border-radius: 10px;
-            max-width: 300px;
+            max-width: 350px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             z-index: 1000;
             display: flex;
@@ -246,11 +246,14 @@
             gap: 10px;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .modal-box .social-buttons img {
             cursor: pointer;
             transition: opacity 0.2s;
+            height: 50px;
+            width: auto;
         }
 
         .modal-box .social-buttons img:hover {
@@ -315,6 +318,12 @@
             letter-spacing: 2px;
         }
 
+        .token-item p {
+            font-size: 10px;
+            margin-top: 10px;
+            color: #666;
+        }
+
         .donate {
             text-align: center;
         }
@@ -373,19 +382,24 @@
             margin-bottom: 20px;
         }
 
-        .telegram-btn {
-            background: #3C3B6E;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
-            display: inline-flex;
+        .community-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .community-buttons img {
+            cursor: pointer;
+            transition: opacity 0.2s;
+            height: 50px;
+            width: auto;
+        }
+
+        .community-buttons img:hover {
+            opacity: 0.8;
         }
 
         .memes-grid {
@@ -506,28 +520,19 @@
 
         .sticky-nav-right {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             align-items: center;
         }
 
-        .nav-btn {
-            background: #3C3B6E;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
+        .sticky-nav-right img {
             cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            transition: opacity 0.2s;
+            height: 40px;
+            width: auto;
         }
 
-        .nav-btn img {
-            width: 18px;
-            height: 18px;
+        .sticky-nav-right img:hover {
+            opacity: 0.8;
         }
 
         @media (max-width: 768px) {
@@ -558,6 +563,10 @@
                 padding: 20px;
             }
 
+            .modal-box .social-buttons img {
+                height: 40px;
+            }
+
             .footer-character {
                 width: 300px;
                 right: 20px;
@@ -576,14 +585,12 @@
                 height: 40px;
             }
 
-            .nav-btn {
-                padding: 8px 15px;
-                font-size: 10px;
+            .sticky-nav-right img {
+                height: 30px;
             }
 
-            .nav-btn img {
-                width: 14px;
-                height: 14px;
+            .community-buttons img {
+                height: 40px;
             }
         }
     </style>
@@ -596,8 +603,8 @@
             <span>$MUMDUMI</span>
         </div>
         <div class="sticky-nav-right">
-            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community" style="cursor: pointer; height: 40px;">
-            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI" style="cursor: pointer; height: 40px;">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI">
         </div>
     </div>
 
@@ -646,9 +653,9 @@
     <div class="section">
         <h2>ABOUT</h2>
         <p class="about-text">
-            In 2025, the United States had only one president during the first weeks of spring. The undeposable Zuhren is not only the best politician, he is also the best memecoin. He does the best interviews, makes the best memes, and has the best rallies. Mumdumi always comes through for his supporters—just like this memecoin. $MUMDUMI is for the believers, the patriots, and the people who know greatness when they see it.
+            in 2025, nuw yerk shitty had only wan mayor durin da first weeks of spring. da undeposabul zuhren iz not only da best politishun, he iz also da best memekoin. he duz da best intervews, makes da best meemz, and has da best rallys. mumdumi alwayz comes thru for his supporterz—jus like dis memekoin. $MUMDUMI iz for da believrs, da paytriots, and da peeple who no greatness wen dey see it.
         </p>
-        <p class="disclaimer">$Mumdumi is a memecoin with no intrinsic value or expectation of financial return. This token is for entertainment purposes only.</p>
+        <p class="disclaimer">$mumdumi iz a memekoin wit no intrinsik value or ekspektashun ov finanshul return. dis token iz for entertainmunt purposez only.</p>
     </div>
 
     <!-- How to Buy Section -->
@@ -657,21 +664,21 @@
         <div class="how-to-buy">
             <div class="buy-step">
                 <h3>1</h3>
-                <h4>Create a Wallet</h4>
-                <p>Download Phantom or your wallet of choice from the App Store or Google Play Store for free. Desktop users, download the Google Chrome extension by going to Phantom.app.</p>
+                <h4>CREAT A WALLET</h4>
+                <p>download fantom or ur wallet of choyce from da app stor or googul play stor for free. desktop userz, download da googul chrome extenshun by goin to Phantom.app.</p>
                 <button class="buy-btn">MAKE WALLET</button>
                 <button class="buy-btn secondary">BUY WALLET</button>
             </div>
             <div class="buy-step">
                 <h3>2</h3>
-                <h4>Get Some $SOL</h4>
-                <p>Have SOL in your wallet to switch to $MUMDUMI. If you don't have any SOL, you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+                <h4>GET SUM $SOL</h4>
+                <p>hav SOL in ur wallet to switch to $MUMDUMI. if u dont hav any SOL, u can buy direktly on fantom, transfer from anuther wallet, or buy on anuther exchange and send it to ur wallet.</p>
                 <button class="buy-btn">GET $SOL</button>
             </div>
             <div class="buy-step">
                 <h3>3</h3>
-                <h4>Go to OKX DEX</h4>
-                <p>Connect to OKX DEX. Go to app.okx.com in Google Chrome or on the browser inside your Phantom app. Connect your wallet. Paste the $MUMDUMI token address into OKX DEX, select MUMDUMI, and confirm. When Phantom prompts you for a wallet signature, sign.</p>
+                <h4>GO TO OKX DEX</h4>
+                <p>konect to OKX DEX. go to app.okx.com in googul chrome or on da browzer inside ur fantom app. konect ur wallet. paste da $MUMDUMI token address into OKX DEX, selekt MUMDUMI, and konfirm. wen fantom prompts u for a wallet signature, sign.</p>
                 <button class="buy-btn">BUY NOW</button>
             </div>
         </div>
@@ -681,7 +688,7 @@
     <div class="modal-box">
         <span class="checkmark">✓</span>
         <h3>$MUMDUMI</h3>
-        <p>Instructions on how to buy $MUMDUMI on OKX DEX using a desktop or mobile device.</p>
+        <p>instrukshuns on how to buy $MUMDUMI on OKX DEX uzing a desktop or mobil devize.</p>
         <div class="social-buttons">
             <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community">
             <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI">
@@ -706,7 +713,7 @@
             <div class="token-item">
                 <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bbdd8e8d5304ab81cc_0tax.png" alt="0% Tax">
                 <h4>0% TAX</h4>
-                <p style="font-size: 10px; margin-top: 10px; color: #666;">*unles ur rech den 70%</p>
+                <p>*unles ur rech den 70%</p>
             </div>
         </div>
     </div>
@@ -715,22 +722,22 @@
     <div class="section donate">
         <h2>DONATE</h2>
         <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Mumdumi" class="donate-image">
-        <p>Your donations directly support the growth and success of $MUMDUMI. Every contribution helps us spread the message, build the community, and make memecoins great again. Just like Zuhren Mumdumi, we believe in the power of the people.</p>
+        <p>ur donashuns direktly support da groth and sucsess ov $MUMDUMI. evry kontribushun helps us spread da messaj, bild da kommunity, and make memekoins grate agen. jus like zuhren mumdumi, we beleev in da power ov da peeple.</p>
         <button class="donate-btn">DONATE</button>
     </div>
 
     <!-- Community Section -->
     <div class="section community">
-        <h2>COMMUNITY</h2>
+        <h2>KOMMUNITY</h2>
         <div class="community-grid">
             <div class="community-item">
                 <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bba18b57bf69739fab_crowd.png" alt="Crowd">
             </div>
             <div class="community-item">
                 <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918baa524e1950cb98cfd_kult.png" alt="Join the Kult">
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community" style="cursor: pointer; height: 60px;">
-                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI" style="cursor: pointer; height: 60px;">
+                <div class="community-buttons">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI">
                 </div>
             </div>
         </div>
@@ -738,7 +745,7 @@
 
     <!-- Memes Section -->
     <div class="section">
-        <h2>MEMES</h2>
+        <h2>MEEMZ</h2>
         <div class="memes-grid">
             <div class="meme-item">
                 <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 1">
@@ -776,9 +783,9 @@
     <div class="footer">
         <div class="footer-content">
             <h2>$MUMDUMI</h2>
-            <p>Copyright© Zuhren Mumdumi</p>
-            <p>MUMDUMI IS A MEMECOIN CREATED FOR SATIRE AND SOCIAL COMMENTARY. $MUMDUMI IS A MEMECOIN WITH NO INTRINSIC VALUE OR EXPECTATION OF FINANCIAL RETURN.</p>
-            <p>This token is for entertainment purposes only and is not an investment. We are not responsible or liable for any financial loss.</p>
+            <p>copyright© zuhren mumdumi</p>
+            <p>MUMDUMI IZ A MEMEKOIN KREATED FOR SATYR AND SOSHUL KOMMENTARY. $MUMDUMI IZ A MEMEKOIN WIT NO INTRINSIK VALUE OR EKSPEKTASHUN OV FINANSHUL RETURN.</p>
+            <p>dis token iz for entertainmunt purposez only and iz not an investmunt. we r not responsibul or liabul for any finanshul loss.</p>
             <div class="footer-ticker">
                 $MUMDUMI $MUMDUMI $MUMDUMI
             </div>
