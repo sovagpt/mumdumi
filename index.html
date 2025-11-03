@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$MUMDUMI - Own Onli Mumdumi No Be Happy</title>
     <style>
+        @font-face {
+            font-family: 'Comico';
+            src: url('/Comico.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,7 +19,7 @@
         }
 
         body {
-            font-family: 'Courier New', monospace;
+            font-family: 'Comico', 'Courier New', monospace;
             background: white;
             color: #000;
             overflow-x: hidden;
@@ -40,51 +47,14 @@
 
         .hero {
             position: relative;
-            background: linear-gradient(to bottom, 
-                #B22234 0%, #B22234 7.69%,
-                white 7.69%, white 15.38%,
-                #B22234 15.38%, #B22234 23.07%,
-                white 23.07%, white 30.76%,
-                #B22234 30.76%, #B22234 38.45%,
-                white 38.45%, white 46.14%,
-                #B22234 46.14%, #B22234 53.83%,
-                white 53.83%, white 61.52%,
-                #B22234 61.52%, #B22234 69.21%,
-                white 69.21%, white 76.9%,
-                #B22234 76.9%, #B22234 84.59%,
-                white 84.59%, white 92.28%,
-                #B22234 92.28%, #B22234 100%
-            );
+            background-image: url('https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             min-height: 500px;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 40%;
-            height: 46.14%;
-            background: #3C3B6E;
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 40%;
-            height: 46.14%;
-            background-image: 
-                radial-gradient(circle, white 25%, transparent 25%);
-            background-size: 6.66% 11.11%;
-            background-position: 3.33% 5.55%;
-            z-index: 2;
         }
 
         .hero-content {
