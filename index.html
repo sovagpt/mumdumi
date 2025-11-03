@@ -217,6 +217,10 @@
             max-width: 300px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .modal-box h3 {
@@ -235,6 +239,22 @@
             top: 15px;
             right: 15px;
             font-size: 24px;
+        }
+
+        .modal-box .social-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box .social-buttons img {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .modal-box .social-buttons img:hover {
+            opacity: 0.8;
         }
 
         .flag-divider {
@@ -666,6 +686,10 @@
         <span class="checkmark">✓</span>
         <h3>$MUMDUMI</h3>
         <p>Instructions on how to buy $MUMDUMI on OKX DEX using a desktop or mobile device.</p>
+        <div class="social-buttons">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690939391a7a4ce64a5abcbf_X%20Community.png" alt="X Community">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093939d0b1c6e82555f4a2_Buy%20%24mumdumi.png" alt="Buy $MUMDUMI">
+        </div>
     </div>
 
     <!-- Flag Divider -->
