@@ -35,13 +35,13 @@
         }
 
         .header h1 {
-            font-size: 48px;
+            font-size: 64px;
             font-weight: bold;
             margin-bottom: 5px;
         }
 
         .header .tagline {
-            font-size: 16px;
+            font-size: 20px;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -449,6 +449,67 @@
             left: 0;
         }
 
+        .sticky-nav {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 3px solid #000;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            transition: top 0.3s ease-out;
+        }
+
+        .sticky-nav.show {
+            top: 0;
+        }
+
+        .sticky-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sticky-nav-left img {
+            height: 50px;
+            width: auto;
+        }
+
+        .sticky-nav-left span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sticky-nav-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: #3C3B6E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn img {
+            width: 18px;
+            height: 18px;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 32px;
@@ -486,10 +547,44 @@
             .memes-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             }
+
+            .sticky-nav-left span {
+                font-size: 18px;
+            }
+
+            .sticky-nav-left img {
+                height: 40px;
+            }
+
+            .nav-btn {
+                padding: 8px 15px;
+                font-size: 10px;
+            }
+
+            .nav-btn img {
+                width: 14px;
+                height: 14px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Sticky Navigation -->
+    <div class="sticky-nav" id="stickyNav">
+        <div class="sticky-nav-left">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093a85113c7e26d7912e6b_mumdumi%20(1)%20(1).png" alt="Mumdumi Head">
+            <span>$MUMDUMI</span>
+        </div>
+        <div class="sticky-nav-right">
+            <button class="nav-btn">
+                <img src="https://cdn.prod.website-files.com/67469151567aad418da8add0/6909393ed3ca53bcaeec98f4_68d5c1872568958fd78018bb_twitter.png" alt="X"> X
+            </button>
+            <button class="nav-btn">
+                <img src="https://cdn.prod.website-files.com/67469151567aad418da8add0/6909396fddb7b6ce72ec72fc_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Coin"> BUY
+            </button>
+        </div>
+    </div>
+
     <!-- Header -->
     <div class="header">
         <h1>$MUMDUMI</h1>
@@ -686,6 +781,18 @@
                 alert('Contract Address copied to clipboard!');
             });
         }
+
+        // Sticky Nav on Scroll
+        window.addEventListener('scroll', () => {
+            const stickyNav = document.getElementById('stickyNav');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 100) {
+                stickyNav.classList.add('show');
+            } else {
+                stickyNav.classList.remove('show');
+            }
+        });
 
         // Side Hand Animation on Scroll
         let handShown = false;
