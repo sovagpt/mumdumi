@@ -198,6 +198,26 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .buy-btn.phantom-btn {
+            background: #ab9ff2;
+            color: white;
+        }
+
+        .buy-btn.moonpay-btn {
+            background: #7914f6;
+            color: white;
+            padding: 12px 40px;
+        }
+
+        .buy-btn:hover {
+            opacity: 0.9;
         }
 
         .buy-btn.secondary {
@@ -709,14 +729,18 @@
                 <h3>1</h3>
                 <h4>CREAT A WALLET</h4>
                 <p>download fantom or ur wallet of choyce from da app stor or googul play stor for free. desktop userz, download da googul chrome extenshun by goin to Phantom.app.</p>
-                <button class="buy-btn">MAKE WALLET</button>
-                <button class="buy-btn secondary">BUY WALLET</button>
+                <a href="https://phantom.com" target="_blank" rel="noopener noreferrer" class="buy-btn phantom-btn">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909429496269acb23426f72_favicon.png" alt="Phantom" style="width: 20px; height: 20px;">
+                    WALLET
+                </a>
             </div>
             <div class="buy-step">
                 <h3>2</h3>
                 <h4>GET SUM $SOL</h4>
                 <p>hav SOL in ur wallet to switch to $MUMDUMI. if u dont hav any SOL, u can buy direktly on fantom, transfer from anuther wallet, or buy on anuther exchange and send it to ur wallet.</p>
-                <button class="buy-btn">GET $SOL</button>
+                <a href="https://moonpay.com" target="_blank" rel="noopener noreferrer" class="buy-btn moonpay-btn">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69094331de68b81681e3513a_moonpay-review-logo-big-v2.png" alt="MoonPay" style="height: 20px; width: auto;">
+                </a>
             </div>
             <div class="buy-step">
                 <h3>3</h3>
